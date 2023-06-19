@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Gutierrez Velez Luis Eduardo">
+  <title>Estampados y Sublimado - Formulario</title>
+  <link rel="stylesheet" href="CSS/EstiloExterno.css">
+  <style>
+
+  h2 {
+    text-align: center;
+  }
+
+  .form-ves {
+      width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-ves label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .form-ves input[type="text"],
+    .form-ves input[type="tel"],
+    .form-ves input[type="email"]
+    .form-ves select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+    .form-ves input[type="radio"]{
+      width: 10%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      display: inline-flex;
+    }
+
+    .form-ves textarea {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Imagenes/logotipo.png" alt="Logo de Estampados y Sublimado">
+      <h1 class="sitio">Sublimado y Estampados S.A.</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Inicio</a></li>
+        <li><a href="Accesorios.html">Categoría de Accesorios</a></li>
+        <li><a href="Vestimenta.html">Categoría de Ropa</a></li>
+        <li><a href="Nosotros.html">Nosotros</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <h2>Formulario de Vestimenta</h2>
+    <p>Este formulario es para conocer su opinión sobre los productos de vestimentas que ofrecemos. Queremos saber si está satisfecho con nuestros productos, sus sugerencias de mejora y cualquier otra retroalimentación que desee compartir con nosotros.</p>
+    <div class="form-ves">
+      <form>
+        <div class="form-group">
+          <label for="nombre">Nombre y Apellido:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tel">Telefono:</label>
+          <textarea id="tel" name="tel" rows="1" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="opciones">Tipo de servicio:</label>
+          <select id="opciones" name="opciones" required>
+            <option value="">Seleccionar</option>
+            <option value="sublimados">Sublimados</option>
+            <option value="estampados">Estampados</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="vestimenta">Tipo de vestimenta:</label>
+            <select id="vestimenta" name="vestimenta" required>
+              <option value="">Seleccionar</option>
+              <option value="camiseta">Camisetas</option>
+              <option value="pantalon">Blusas</option>
+              <option value="chaqueta">Jeans</option>
+              <option value="chaqueta">Shorts</option>
+              <option value="chaqueta">Gorras</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="otros_vestimenta">Especificar vestimenta:</label>
+            <input type="text" id="otros_vestimenta" name="otros_vestimenta">
+          </div>
+
+          <div class="form-group">
+            <label>Calificación del producto:</label>
+            <div class="rating">
+              <label>
+                <input type="radio" id="excepcional" name="calificacion" value="excepcional" required>
+                Excepcional
+              </label>
+      
+              <label>
+                <input type="radio" id="bueno" name="calificacion" value="bueno">
+                Bueno
+              </label>
+      
+              <label>
+                <input type="radio" id="regular" name="calificacion" value="regular">
+                Regular
+              </label>
+      
+              <label>
+                <input type="radio" id="malo" name="calificacion" value="malo">
+                Malo
+              </label>
+      
+              <label>
+                <input type="radio" id="pesimo" name="calificacion" value="pesimo">
+                Pésimo
+              </label>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label for="ejemplos">Retroalimentación:</label>
+            <textarea id="ejemplos" name="ejemplos" rows="5" required></textarea>
+          </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+  <script>
+    document.getElementById("vestimenta").addEventListener('change', function() {
+      var otrosVestimenta = document.getElementById("otros_vestimenta");
+      otrosVestimenta.style.display = (this.value === "otros") ? 'block' : 'none';
+    });
+  </script>
+
+  <footer>
+    <address>
+      <p id="Luis"> Hecho por: <a href="luisedgut2001@gmail.com">Gutierrez Velez Luis</a></p>
+        <span><em>Redes sociales</em></span>
+        <br>
+            <a href="#"><i class="fab fa-facebook-f">Facebook</i></a>
+            <a href="#"><i class="fab fa-twitter">Twitter</i></a>
+            <a href="#"><i class="fab fa-instagram">Instagram</i></a>
+            <a href="https://www.youtube.com"><i class="fab fa-youtube">Youtube</i></a> 
+    </address>
+    Derechos de Autor &copy; 2023 - Sublimado y Estampados S.A.
+  </footer>
+
+</body>
+</html>
